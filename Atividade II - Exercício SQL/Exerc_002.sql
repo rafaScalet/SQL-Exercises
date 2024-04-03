@@ -72,4 +72,5 @@ use vendas
 select ID_NF, count(ID_NF) as QTD_Itens
 from PRODUTOS
 group by ID_NF
+having count(ID_NF) > 3
 go
