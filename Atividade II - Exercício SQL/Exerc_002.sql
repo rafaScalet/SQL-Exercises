@@ -28,8 +28,9 @@ order by Valor_Total desc
 go
 --6
 use vendas
-select ID_NF, Valor_Unit - (Valor_Unit * ([Desconto(%)]/100)) as Valor_Vendido
+select ID_NF, sum(Valor_Unit - (Valor_Unit * ([Desconto(%)]/100))) as Valor_Vendido
 from PRODUTOS
+group by ID_NF
 order by Valor_Vendido desc
 go
 --7
